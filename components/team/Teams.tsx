@@ -63,7 +63,7 @@ export default function Teams() {
     return (
       <div className={styles.card}>
         <div className={styles.imageWrapper}>
-          <Image className={styles.memberImage} src={'/image/Danel.png'} alt='' fill />
+          {/* <Image className={styles.memberImage} src={'/image/Danel.png'} alt='' fill /> */}
         </div>
         <h3 className={styles.name}>{member.name}</h3>
         <p className={styles.title}>{t.team[member.titleKey]}</p>
@@ -83,7 +83,6 @@ export default function Teams() {
       </div>
     );
   };
-  // [1xV1Fjuz62+OK
   return (
     <section id='support' className={styles.teamSection}>
       <div className='container'>
