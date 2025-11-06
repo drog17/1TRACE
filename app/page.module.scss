@@ -1,0 +1,70 @@
+.chatButtonContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* --- Hover Text Styles (unchanged) --- */
+.hoverText {
+    background: #17c7e9;
+  color: #c0e0ff;
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-right: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.chatButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e70e9 0%, #17c7e9 100%);  
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 0 10px rgba(23, 199, 233, 0.5); 
+  
+  /* Apply the pulsation animation */
+  animation: pulse 1.5s infinite ease-in-out; /* 1.5s duration, infinite loop, smooth ease */
+  a{
+    text-decoration: none;
+  }
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Keep existing transitions */
+}
+
+/* --- Keyframes for the Pulsation Effect --- */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(23, 199, 233, 0.5); /* Start with a moderate glow */
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(23, 199, 233, 0.9), 0 0 35px rgba(23, 199, 233, 0.6); /* Max glow */
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(23, 199, 233, 0.5); /* Return to moderate glow */
+  }
+}
+
+/* --- Hover State for the Container (updated for pulsation) --- */
+.chatButtonContainer:hover .hoverText {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.chatButtonContainer:hover .chatButton {
+  /* Stop pulsation and apply a stronger, static glow on hover */
+  animation: none; /* Stop the pulse animation */
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(23, 199, 233, 0.9), 0 0 35px rgba(23, 199, 233, 0.6); /* Stronger static glow */
+}

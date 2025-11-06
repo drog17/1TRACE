@@ -1,0 +1,42 @@
+/* components/TelegramButton/TelegramButton.module.scss */
+
+// Переменные для удобства (опционально)
+$gradient-start: #0070f3; // Синий
+$gradient-end: #00aaff; // Голубой/Циан
+
+.button {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; // Расстояние между иконкой и текстом
+
+    padding: 18px 32px;
+    border-radius: 50px; // Очень скругленные углы
+    text-decoration: none; // Убрать подчеркивание у ссылки
+    cursor: pointer;
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff; // Белый текст
+
+    /* Градиентный фон */
+    background: linear-gradient(90deg, $gradient-start 0%, $gradient-end 100%);
+    border: none;
+
+    /* Эффект при наведении (опционально) */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 112, 243, 0.4); // Легкая тень
+
+    &:hover {
+        box-shadow: 0 6px 25px rgba(0, 170, 255, 0.6); // Усиленная тень
+        transform: translateY(-1px);
+    }
+}
+
+.icon {
+    /* Стиль для иконки Telegram */
+    font-size: 24px;
+    // Добавление небольшого поворота, чтобы она выглядела как в вашем примере
+    transform: rotate(15deg);
+}

@@ -1,40 +1,59 @@
+'use client'; // ⭐️ Обязательно для использования хуков (useTranslation)
 import styles from './styles.module.scss';
+// 🛑 ПРИМЕЧАНИЕ: Используйте правильный путь к вашему хуку useTranslation
+import { useTranslation } from '@/widgets/header/UseTrnaslation'; 
+
 
 export default function Work() {
+    const { t } = useTranslation(); // Получаем объект перевода
+
     return (
         <section className={styles.section} id="how-it-works">
             <div className="container">
-                <h2 className={styles.title}>Как работает 1TRACE</h2>
+                {/* 1. ЗАГОЛОВОК */}
+                {/* ⭐️ Используем t.howItWorks.title */}
+                <h2 className={styles.title}>{t.howItWorks.title}</h2> 
+                
                 <div className={styles.steps}>
+                    
+                    {/* 2. КАРТОЧКА 1: Ввод данных */}
                     <div className={styles.card}>
                         <div className={styles.number}>01</div>
-                        <h3 className={styles.cardTitle}>Введите данные</h3>
+                        {/* ⭐️ Используем t.howItWorks.card1Title */}
+                        <h3 className={styles.cardTitle}>{t.howItWorks.card1Title}</h3>
                         <p className={styles.cardText}>
-                            Email, телефон, username, ИНН, ФИО
+                            {/* ⭐️ Используем t.howItWorks.card1Desc */}
+                            {t.howItWorks.card1Desc}
                         </p>
                     </div>
+                    
                     <div className={styles.arrow}>→</div>
+                    
+                    {/* 3. КАРТОЧКА 2: Системный анализ */}
                     <div className={styles.card}>
                         <div className={styles.number}>02</div>
-                        <h3 className={styles.cardTitle}>Анализ системы</h3>
+                        {/* ⭐️ Используем t.howItWorks.card2Title */}
+                        <h3 className={styles.cardTitle}>{t.howItWorks.card2Title}</h3>
                         <p className={styles.cardText}>
-                            Система анализирует утечки и следы в интернете
+                            {/* ⭐️ Используем t.howItWorks.card2Desc */}
+                            {t.howItWorks.card2Desc}
                         </p>
                     </div>
+                    
                     <div className={styles.arrow}>→</div>
+                    
+                    {/* 4. КАРТОЧКА 3: Получение результатов */}
                     <div className={styles.card}>
                         <div className={styles.number}>03</div>
-                        <h3 className={styles.cardTitle}>Получите результат</h3>
+                        {/* ⭐️ Используем t.howItWorks.card3Title */}
+                        <h3 className={styles.cardTitle}>{t.howItWorks.card3Title}</h3>
                         <p className={styles.cardText}>
-                            Отчёт в Telegram-боте
+                            {/* ⭐️ Используем t.howItWorks.card3Desc */}
+                            {t.howItWorks.card3Desc}
                         </p>
                     </div>
                 </div>
-                <div className={styles.buttonWrapper}>
-                    <button className={styles.pulseButton}>
-                        Начать проверку
-                    </button>
-                </div>
+                
                 <div className={styles.particles}></div>
             </div>
         </section>

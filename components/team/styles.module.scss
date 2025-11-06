@@ -1,0 +1,112 @@
+$card-background: #04142b;
+$text-color: #c9d1d9;
+$highlight-color: #00bcd4; // Бирюзовый для подсветки
+
+.teamSection {
+  background: none;
+  padding: 80px 0;
+  color: $text-color;
+  background-image: radial-gradient(circle, rgba(201, 209, 217, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  position: relative;
+  z-index: 15;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: $card-background;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(0, 188, 212, 0.15);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
+  }
+}
+
+.imageWrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid $highlight-color; // Цветная обводка
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+}
+
+.memberImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #ffffff; // Более яркий белый
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 400;
+  color: $highlight-color; // Подсветка должности
+  margin-bottom: 15px;
+}
+
+.bio {
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 80px; // Обеспечиваем одинаковую высоту для текста
+  margin-bottom: 20px;
+  color: #a0a8b3;
+}
+
+.skillsHeader {
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left; // Скиллы выравниваем по левому краю
+    color: #ffffff;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start; // Скиллы выравниваем по левому краю
+}
+
+.skillTag {
+  background-color: rgba(0, 188, 212, 0.1);
+  color: $highlight-color;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 188, 212, 0.3);
+}
+
+@media(max-width: 560px){
+  .cardsGrid{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    .card{
+      justify-content: center;
+    }
+  }
+}

@@ -1,14 +1,15 @@
+// Header.tsx
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import useTranslation from './UseTrnaslation';
+// Импортируем исправленный хук
+import { useTranslation } from './UseTrnaslation'; 
 import styles from './styles.module.scss';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { t, lang, switchLang } = useTranslation();
-
+    const { t, lang, switchLang } = useTranslation(); 
   return (
     <header className={styles.header}>
       <div className={styles.logoBlock}>
@@ -29,11 +30,13 @@ export default function Header() {
 
       <div className={styles.langSwitcher}>
         <button
+          // ⭐️ Используем switchLang из контекста
           onClick={() => switchLang('ru')}
           className={`${styles.langBtn} ${lang === 'ru' ? styles.active : ''}`}>
           RU
         </button>
         <button
+          // ⭐️ Используем switchLang из контекста
           onClick={() => switchLang('en')}
           className={`${styles.langBtn} ${lang === 'en' ? styles.active : ''}`}>
           EN

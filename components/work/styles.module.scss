@@ -17,8 +17,7 @@ background: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   position: relative;
 }
 
@@ -27,18 +26,17 @@ background: none;
   border: 1px solid #1e3a8a;
   border-radius: 16px;
   padding: 40px 30px;
-  width: 280px;
   text-align: center;
   box-shadow: 0 0 20px rgba(30, 64, 175, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(30, 64, 175, 0.3);
+  box-shadow: 0 0  60px rgba(30, 64, 175, 0.3);
 }
 
 .number {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #3b82f6;
   margin-bottom: 15px;
@@ -46,14 +44,14 @@ background: none;
 }
 
 .cardTitle {
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .cardText {
   color: #9ca3af;
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -65,50 +63,7 @@ background: none;
   user-select: none;
 }
 
-/* Pulsing button */
-.buttonWrapper {
-  margin-top: 80px;
-}
-.pulseButton {
-  position: relative;
-  background: #3b82f6;
-  color: white;
-  font-size: 1.1rem;
-  padding: 14px 36px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-  transition: transform 0.2s ease;
-}
-.pulseButton:hover {
-  transform: scale(1.05);
-}
 
-.pulseButton::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50px;
-  border: 2px solid rgba(59, 130, 246, 0.7);
-  animation: pulse 1.8s infinite;
-}
-
-// @keyframes pulse {
-//   0% {
-//     transform: scale(1);
-//     opacity: 0.8;
-//   }
-//   70% {
-//     transform: scale(1.4);
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// }
-
-/* Responsive */
 @media (max-width: 900px) {
   .steps {
     flex-direction: column;
@@ -156,4 +111,14 @@ background: none;
   50% { transform: translate(-30px, 60px); }
   75% { transform: translate(70px, 40px); }
   100% { transform: translate(0, 0); }
+}
+
+@media(max-width:560px){
+  .steps{
+    display: flex;
+    flex-direction: column;
+    .card{
+      width: 90%;
+    }
+  }
 }

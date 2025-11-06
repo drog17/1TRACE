@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Background from "@/components/hero/Background";
+import Background from "@/components/Backgound/Background";
+import { LanguageProvider } from "@/widgets/header/UseTrnaslation";
 
 export const metadata: Metadata = {
   title: "1TRACE",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
-        <Background/>
-        {children}
+        <LanguageProvider>
+          <Background />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

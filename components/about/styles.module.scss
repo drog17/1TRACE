@@ -9,27 +9,27 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 44px;
   margin-bottom: 50px;
 }
 
 .cards {
   display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
   z-index: 1;
   position: relative;
+  gap: 20px;
 }
 
 .card {
-  background: rgba(15, 23, 42, 0.8);
+  background: none;
   border: 1px solid rgba(70, 130, 255, 0.3);
   border-radius: 15px;
-  padding: 30px;
-  width: 250px;
+  padding: 30px 20px; 
   backdrop-filter: blur(10px);
   transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .card:hover {
@@ -103,5 +103,16 @@
 
   100% {
     transform: translate(0, 0);
+  }
+}
+
+@media(max-width: 560px){
+  .cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .card{
+      width: 90%;
+    }
   }
 }

@@ -1,0 +1,92 @@
+/* components/TechnologySection.module.css */
+
+.sectionContainer {
+  background: none;
+  padding: 80px 20px; /* Vertical padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* To contain any background effects */
+}
+
+/* --- Main Title Styles --- */
+.mainTitle {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 60px; /* Space below title */
+  text-align: center;
+}
+
+/* --- Grid Container Styles --- */
+.cardsGrid {
+  display: grid;
+  /* Four columns for large screens */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; /* Space between cards */
+  max-width: 1300px; /* Limit the width of the whole section */
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
+
+
+.card {
+  background-color: none; /* Slightly lighter than container for depth */
+  border: 1px solid rgba(30, 112, 233, 0.2); /* Subtle blue border */
+  border-radius: 8px;
+  padding: 30px;
+  min-height: 250px; /* Ensure cards have similar height */
+  display: flex;
+  flex-direction: column;
+  
+  /* Transition for hover effect */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: Subtle blue glow on hover */
+.card:hover {
+  border-color: #1e70e9; /* Brighter border */
+  box-shadow: 0 0 15px rgba(30, 112, 233, 0.4); 
+}
+
+/* --- Icon Background/Wrapper (if needed for styling) --- */
+.iconBackground {
+  /* Placeholder for potential icon wrapper styling if an SVG is used */
+  margin-bottom: 20px;
+}
+
+/* --- Icon Styles --- */
+.cardIcon {
+  /* Using large font for placeholder emoji icons */
+  font-size: 2.5rem; 
+  color: #17c7e9; /* Use the bright blue/cyan for the icon color */
+  /* If using a real SVG, replace with appropriate CSS to color it */
+}
+
+/* --- Text Styles --- */
+.cardTitle {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.cardDescription {
+  color: #c0e0ff; /* Light, slightly muted color for body text */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0;
+}

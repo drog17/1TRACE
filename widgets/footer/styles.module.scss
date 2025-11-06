@@ -1,0 +1,138 @@
+$text-color: #c9d1d9;
+$link-color: #00bcd4; // Бирюзовый для подсветки
+$button-start: #0070f3;
+$button-end: #00aaff;
+
+.footer {
+    background: none;
+    padding: 50px 0 30px;
+    color: $text-color;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(circle, rgba(201, 209, 217, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.logoBlock {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .logo {
+        box-shadow: 0 0 20px #1e40af;
+        border-radius: 50%;
+    }
+}
+
+.logoTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+}
+
+.logoSubtitle {
+    font-size: 14px;
+    color: $text-color;
+}
+
+.socials {
+  display: flex;
+  gap: 15px; // Расстояние между иконками
+}
+
+.socialIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; // Круглая форма
+  background-color: rgba(255, 255, 255, 0.05); // Тёмный, полупрозрачный фон
+  color: $text-color; // Цвет иконки (светло-серый)
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: $link-color; // Бирюзовый фон при наведении
+    color: grey; 
+  }
+}
+
+// ...
+.divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+}
+
+// ------------------------------------
+// 2. Нижняя секция
+// ------------------------------------
+.bottomRow {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.copyright {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.description,
+.developed {
+    margin-bottom: 5px;
+    color: $text-color;
+}
+
+.policyLinks {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.policyLink {
+    color: $link-color;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .logoBlock {
+        justify-content: center;
+    }
+
+    .socials {
+        order: 3; // Соцсети внизу
+    }
+
+    .policyLinks {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
