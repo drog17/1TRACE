@@ -1,0 +1,163 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background: linear-gradient(to right, #000, #0a0a0a, #000);
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  position: fixed;
+}
+
+.logo {
+  box-shadow: 0 0 20px #1e40af;
+  border-radius: 50%;
+}
+
+.logoBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoTitle {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.logoSubtitle {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  gap: 40px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a:hover {
+  color: #3b82f6;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #3b82f6;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Переключатель языка */
+.langSwitcher {
+  display: flex;
+  align-items: center;
+  background: #0f172a;
+  border: 1px solid #1e40af;
+  border-radius: 40px;
+  padding: 4px;
+  box-shadow: 0 0 10px rgba(30, 64, 175, 0.3);
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 30px;
+  background: transparent;
+  color: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: #1e40af;
+}
+
+.langBtn:hover {
+  color: #fff;
+}
+
+.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Бургер */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 150;
+}
+
+.burger span {
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.burgerActive span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burgerActive span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerActive span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Мобильная версия */
+@media (max-width: 900px) {
+  .nav {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 30px 0;
+    width: 100%;
+    transform: translateY(-200%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

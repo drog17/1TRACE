@@ -1,0 +1,159 @@
+.section {
+background: none;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 60px;
+  letter-spacing: 0.5px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+}
+
+.card {
+  background: linear-gradient(180deg, #0a0a0f 0%, #020617 100%);
+  border: 1px solid #1e3a8a;
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(30, 64, 175, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(30, 64, 175, 0.3);
+}
+
+.number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cardText {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Arrow between cards */
+.arrow {
+  font-size: 2rem;
+  color: #3b82f6;
+  margin: 0 5px;
+  user-select: none;
+}
+
+/* Pulsing button */
+.buttonWrapper {
+  margin-top: 80px;
+}
+.pulseButton {
+  position: relative;
+  background: #3b82f6;
+  color: white;
+  font-size: 1.1rem;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  transition: transform 0.2s ease;
+}
+.pulseButton:hover {
+  transform: scale(1.05);
+}
+
+.pulseButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  border: 2px solid rgba(59, 130, 246, 0.7);
+  animation: pulse 1.8s infinite;
+}
+
+// @keyframes pulse {
+//   0% {
+//     transform: scale(1);
+//     opacity: 0.8;
+//   }
+//   70% {
+//     transform: scale(1.4);
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .steps {
+    flex-direction: column;
+  }
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particles::before,
+.particles::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(70, 130, 255, 0.5);
+  border-radius: 50%;
+  animation: pulse 4s infinite ease-in-out, move 20s linear infinite;
+}
+
+.particles::after {
+  width: 8px;
+  height: 8px;
+  background: rgba(70, 130, 255, 0.3);
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(50px, -30px); }
+  50% { transform: translate(-30px, 60px); }
+  75% { transform: translate(70px, 40px); }
+  100% { transform: translate(0, 0); }
+}

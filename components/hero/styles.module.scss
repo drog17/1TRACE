@@ -1,0 +1,21 @@
+.hero{
+    padding-top: 80px;
+    margin-bottom: 200px;
+    z-index: 1;
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title{
+            font-size: 74px;
+            color: aqua;
+            font-weight: 400;
+        }
+        .subtitle{
+            font-size: 44px;
+            color: aqua;
+            font-weight: 400;
+        }
+    }
+}
