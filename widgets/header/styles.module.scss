@@ -194,3 +194,66 @@ $transition-speed: 0.3s;
     display: flex;
   }
 }
+@media (max-width: 560px) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .logoBlock {
+    gap: 6px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 14px $glow-color;
+  }
+
+  .logoTitle {
+    font-size: 18px;
+  }
+
+  .logoSubtitle {
+    font-size: 0.75rem;
+  }
+
+  /* Навигация */
+  .nav {
+    top: 58px;
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  /* Переключатель языка */
+  .langSwitcher {
+    padding: 2px;
+    gap: 4px;
+  }
+
+  .langBtn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .flagIcon {
+    width: 22px;
+    height: 16px;
+    margin-left: 4px;
+  }
+
+  /* Бургер */
+  .burger {
+    width: 22px;
+    height: 16px;
+  }
+
+  .burger span {
+    height: 2px;
+  }
+}

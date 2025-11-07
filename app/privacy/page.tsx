@@ -1,4 +1,3 @@
-// app/policy/page.tsx (для App Router)
 
 import Link from 'next/link';
 // Импорт модульных стилей. Убедитесь, что путь верный

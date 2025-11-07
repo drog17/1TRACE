@@ -107,10 +107,9 @@ export const translations = {
       "contact": "Contact"
     },
     "header_texts": [
-      "Next Generation Cyber Intelligence Platform",
-      "We offer cutting-edge solutions for your data protection.",
-      "Join our community of professionals today!",
-      "Latest news and analytics from the world of IT and finance."
+      "One Trace (1TRACE) — platform for searching information leaks about a person on the Internet.",
+      "Professional OSINT analysis in one click.",
+      "Platform from specialists in cybersecurity and blockchain technologies.",
     ],
     "hero": {
       "span1": "Next Generation Cyber Intelligence Platform",
@@ -207,10 +206,9 @@ export const translations = {
       "contact": "Контакты"
     },
     "header_texts": [
-      "Платформа киберразведки нового поколения",
-      "Мы предлагаем передовые решения для защиты ваших данных.",
+      "Один след (1TRACE) — платформа для поиска утечек информации о персоне в сети интернет.",
+      "Профессиональный OSINT-анализ в один клик.",
       "Присоединяйтесь к сообществу профессионалов уже сегодня!",
-      "Актуальные новости и аналитика из мира IT и финансов."
     ],
     "hero": {
       "span1": "Платформа киберразведки нового поколения",
