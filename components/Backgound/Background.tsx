@@ -23,6 +23,10 @@ const Background: React.FC = () => {
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
 
+    // Центр глобуса
+    let centerX = width / 2;
+    let centerY = height / 2;
+
     // Инициализация частиц
     particlesRef.current = Array.from({ length: NUM_PARTICLES }, () => ({
       x: Math.random() * width,
@@ -32,11 +36,67 @@ const Background: React.FC = () => {
       size: Math.random() * 3 + 1,
     }));
 
+    const drawGlobeLines = () => {
+      ctx.strokeStyle = "rgba(50, 120, 200, 0.15)";
+      ctx.lineWidth = 1;
+
+      // Радиус глобуса
+      const maxR = Math.min(width, height) * 0.45;
+
+      // ✅ Круговые линии (широтные)
+      for (let i = 0; i <= 6; i++) {
+        const r = (maxR / 6) * i;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // ✅ Радиальные линии (долготные)
+      for (let angle = 0; angle < 360; angle += 20) {
+        const rad = (angle * Math.PI) / 180;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.lineTo(centerX + maxR * Math.cos(rad), centerY + maxR * Math.sin(rad));
+        ctx.stroke();
+      }
+    };
+
+    const drawGrid = () => {
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.03)";
+      ctx.lineWidth = 1;
+
+      const step = 80;
+
+      // Вертикальные линии
+      for (let x = 0; x < width; x += step) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+
+      // Горизонтальные линии
+      for (let y = 0; y < height; y += step) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+      }
+    };
+
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
+
+      // ✅ Фоновая сетка
+      drawGrid();
+
+      // ✅ Линии глобуса
+      drawGlobeLines();
+
+      // ✅ Частицы
       ctx.fillStyle = "rgba(0, 200, 255, 0.7)";
 
-      particlesRef.current.forEach(p => {
+      particlesRef.current.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
 
@@ -57,6 +117,8 @@ const Background: React.FC = () => {
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
+      centerX = width / 2;
+      centerY = height / 2;
     };
 
     window.addEventListener("resize", handleResize);
