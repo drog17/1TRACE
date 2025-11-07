@@ -1,15 +1,15 @@
-// Header.tsx
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-// Импортируем исправленный хук
-import { useTranslation } from './UseTrnaslation'; 
+import { useTranslation } from './UseTrnaslation';
 import styles from './styles.module.scss';
+import HeaderBanner from './headerBanner/HeaderBanner';
+import { RU, GB } from 'country-flag-icons/react/3x2';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-    const { t, lang, switchLang } = useTranslation(); 
+  const { t, lang, switchLang } = useTranslation();
   return (
     <header className={styles.header}>
       <div className={styles.logoBlock}>
@@ -29,18 +29,20 @@ export default function Header() {
       </nav>
 
       <div className={styles.langSwitcher}>
-        <button
-          // ⭐️ Используем switchLang из контекста
-          onClick={() => switchLang('ru')}
-          className={`${styles.langBtn} ${lang === 'ru' ? styles.active : ''}`}>
-          RU
-        </button>
-        <button
-          // ⭐️ Используем switchLang из контекста
-          onClick={() => switchLang('en')}
-          className={`${styles.langBtn} ${lang === 'en' ? styles.active : ''}`}>
-          EN
-        </button>
+        <div className={styles.langSwitcher}>
+          <button
+            onClick={() => switchLang('ru')}
+            className={`${styles.langBtn} ${lang === 'ru' ? styles.active : ''}`}>
+            <span className={styles.langCode}>RU</span>
+            <RU className={styles.flagIcon} />
+          </button>
+          <button
+            onClick={() => switchLang('en')}
+            className={`${styles.langBtn} ${lang === 'en' ? styles.active : ''}`}>
+            <span className={styles.langCode}>EN</span>
+            <GB className={styles.flagIcon} />
+          </button>
+        </div>
       </div>
 
       <button
@@ -51,6 +53,7 @@ export default function Header() {
         <span />
         <span />
       </button>
+      <HeaderBanner />
     </header>
   );
 }

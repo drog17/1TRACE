@@ -1,35 +1,90 @@
-.hero{
+$pulse-color: #1e40af; // Цвет свечения
+$pulse-duration: 4s; // Полный цикл пульсации (ваши 4 секунды)
+$pulse-intensity: 110px;
+
+.hero {
     position: relative;
-    padding-top: 80px;
+    padding-top: 180px;
     margin-bottom: 200px;
-    .content{
+
+    .content {
         font-family: "Orbitron", sans-serif;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        .title{
+        width: 60%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+
+        @keyframes glow-pulse {
+            0% {
+                // Начальное состояние (слабое свечение или без него)
+                box-shadow: 0 0 10px rgba($pulse-color, 0.4);
+            }
+
+            40% {
+                // Максимальное свечение (достигается на 40% цикла)
+                box-shadow: 0 0 $pulse-intensity $pulse-color;
+            }
+
+            100% {
+                // Конец цикла (возврат к исходному состоянию)
+                box-shadow: 0 0 10px rgba($pulse-color, 0.4);
+            }
+        }
+
+        .logoBlock {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .logoWrapper {
+                position: relative;
+                width: 106px;
+                height: 106px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 10px;
+                animation: glow-pulse $pulse-duration ease-in-out infinite;
+                box-shadow: 0 0 10px rgba($pulse-color, 0.4);
+            }
+
+            .logoImage {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+
+        .title {
             font-size: 74px;
             color: aqua;
             font-weight: 400;
         }
-        .subtitle{
+
+        .subtitle {
             font-size: 44px;
             color: aqua;
             font-weight: 400;
         }
-        .span1{
+
+        .span1 {
             font-size: 34px;
             font-weight: 400;
             color: #fff;
         }
-        .span2{
+
+        .span2 {
             color: aqua;
             font-size: 24px;
             font-weight: 200;
         }
-        p{
+
+        p {
             font-size: 16px;
             font-weight: 400;
             color: #b9b9b9;
@@ -37,9 +92,10 @@
         }
     }
 }
-@media(max-width: 560px){
-    .hero{
-        .content{
+
+@media(max-width: 560px) {
+    .hero {
+        .content {
             width: 90%;
             display: flex;
             flex-direction: column;

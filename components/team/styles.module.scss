@@ -1,6 +1,8 @@
+@use "sass:color";
+
 $card-background: #04142b;
 $text-color: #c9d1d9;
-$highlight-color: #00bcd4; // Бирюзовый для подсветки
+$highlight-color: #00bcd4;
 
 .teamSection {
   background: none;
@@ -14,7 +16,7 @@ $highlight-color: #00bcd4; // Бирюзовый для подсветки
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -27,30 +29,43 @@ $highlight-color: #00bcd4; // Бирюзовый для подсветки
   text-align: center;
   border: 1px solid rgba(0, 188, 212, 0.15);
   box-shadow: 0 0 20px rgba(0, 188, 212, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 188, 212, 0.35);
+
+    .imageWrapper {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0, 188, 212, 0.35);
+    }
+
+    .memberImage {
+      transform: scale(1.1);
+    }
   }
 }
 
 .imageWrapper {
+  position: relative;
   width: 150px;
   height: 150px;
   margin: 0 auto 20px;
   border-radius: 15px;
   overflow: hidden;
-  border: 3px solid $highlight-color; // Цветная обводка
+  border: 3px solid $highlight-color;
   box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .memberImage {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   display: block;
+  transition: transform 0.35s ease;
 }
+
 
 .name {
   font-size: 24px;
@@ -75,12 +90,12 @@ $highlight-color: #00bcd4; // Бирюзовый для подсветки
 }
 
 .skillsHeader {
-    font-weight: 600;
-    font-size: 14px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: left; // Скиллы выравниваем по левому краю
-    color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left; // Скиллы выравниваем по левому краю
+  color: #ffffff;
 }
 
 .skillsContainer {
@@ -100,12 +115,13 @@ $highlight-color: #00bcd4; // Бирюзовый для подсветки
   border: 1px solid rgba(0, 188, 212, 0.3);
 }
 
-@media(max-width: 560px){
-  .cardsGrid{
+@media(max-width: 560px) {
+  .cardsGrid {
     display: flex;
     flex-direction: column;
     width: 90%;
-    .card{
+
+    .card {
       justify-content: center;
     }
   }

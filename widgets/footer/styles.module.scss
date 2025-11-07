@@ -2,6 +2,9 @@ $text-color: #c9d1d9;
 $link-color: #00bcd4; // Бирюзовый для подсветки
 $button-start: #0070f3;
 $button-end: #00aaff;
+$glow-color: #1e40af; // Цвет свечения
+$lift-amount: -5px; // На сколько пикселей поднимется логотип
+$transition-speed: 0.3s;
 
 .footer {
     background: none;
@@ -31,10 +34,21 @@ $button-end: #00aaff;
     align-items: center;
     gap: 15px;
 
+
     .logo {
-        box-shadow: 0 0 20px #1e40af;
+        box-shadow: 0 0 20px $glow-color;
         border-radius: 50%;
-    }
+        z-index: 100;
+
+        transition: box-shadow $transition-speed ease-out,
+            transform $transition-speed ease-out;
+
+        &:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 40px rgba($glow-color, 0.8),
+                0 0 100px $glow-color;
+        }
+    }   
 }
 
 .logoTitle {
@@ -50,26 +64,26 @@ $button-end: #00aaff;
 }
 
 .socials {
-  display: flex;
-  gap: 15px; // Расстояние между иконками
+    display: flex;
+    gap: 15px; // Расстояние между иконками
 }
 
 .socialIcon {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%; // Круглая форма
-  background-color: rgba(255, 255, 255, 0.05); // Тёмный, полупрозрачный фон
-  color: $text-color; // Цвет иконки (светло-серый)
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; // Круглая форма
+    background-color: rgba(255, 255, 255, 0.05); // Тёмный, полупрозрачный фон
+    color: $text-color; // Цвет иконки (светло-серый)
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
-  &:hover {
-    background-color: $link-color; // Бирюзовый фон при наведении
-    color: grey; 
-  }
+    &:hover {
+        background-color: $link-color; // Бирюзовый фон при наведении
+        color: grey;
+    }
 }
 
 // ...

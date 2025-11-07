@@ -48,8 +48,8 @@ export default function Footer() {
 
                     <div className={styles.policyLinks}>
                         {/* ⭐️ ИСПОЛЬЗУЕМ ПЕРЕВОДЫ ДЛЯ ССЫЛОК */}
-                        <Link href="/privacy" className={styles.policyLink}>{t.footer.privacy}</Link>
-                        <Link href="/agreement" className={styles.policyLink}>{t.footer.agreement}</Link>
+                        <Link href="https://t.me/onetrace_support" className={styles.policyLink}>{t.footer.privacy}</Link>
+                        <Link href="https://t.me/onetrace_support" className={styles.policyLink}>{t.footer.agreement}</Link>
                     </div>
                 </div>
             </div>

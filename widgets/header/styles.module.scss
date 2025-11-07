@@ -1,3 +1,7 @@
+$glow-color: #1e40af; // Цвет свечения
+$lift-amount: -5px; // На сколько пикселей поднимется логотип
+$transition-speed: 0.3s;
+
 .header {
   width: 100%;
   display: flex;
@@ -7,19 +11,30 @@
   background: linear-gradient(to right, #000, #0a0a0a, #000);
   color: #fff;
   position: relative;
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
-}
-
-.logo {
-  box-shadow: 0 0 20px #1e40af;
-  border-radius: 50%;
 }
 
 .logoBlock {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer; // Указываем, что элемент интерактивен
+}
+
+.logo {
+  box-shadow: 0 0 20px $glow-color;
+  border-radius: 50%;
+  z-index: 100;
+
+  transition: box-shadow $transition-speed ease-out,
+    transform $transition-speed ease-out;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 40px rgba($glow-color, 0.8),
+      0 0 100px $glow-color;
+  }
 }
 
 .logoTitle {
@@ -93,6 +108,18 @@
 
 .langBtn:hover {
   color: #fff;
+}
+
+.flagIcon {
+  width: 28px;
+  height: 20px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.langCode {
+  margin-right: 4px;
 }
 
 .active {

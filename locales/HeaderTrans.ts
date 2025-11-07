@@ -92,6 +92,7 @@ type TranslationKey = {
     card4Title: string;
     card4Desc: string;
   };
+  header_texts: string[]
 };
 
 export const translations = {
@@ -105,6 +106,12 @@ export const translations = {
       "support": "Support",
       "contact": "Contact"
     },
+    "header_texts": [
+      "Next Generation Cyber Intelligence Platform",
+      "We offer cutting-edge solutions for your data protection.",
+      "Join our community of professionals today!",
+      "Latest news and analytics from the world of IT and finance."
+    ],
     "hero": {
       "span1": "Next Generation Cyber Intelligence Platform",
       "p1": "Searches, analyzes and prevents data leaks. Your digital security is under control",
@@ -199,6 +206,12 @@ export const translations = {
       "support": "Поддержка",
       "contact": "Контакты"
     },
+    "header_texts": [
+      "Платформа киберразведки нового поколения",
+      "Мы предлагаем передовые решения для защиты ваших данных.",
+      "Присоединяйтесь к сообществу профессионалов уже сегодня!",
+      "Актуальные новости и аналитика из мира IT и финансов."
+    ],
     "hero": {
       "span1": "Платформа киберразведки нового поколения",
       "p1": "Ищет, анализирует и предупреждает утечки данных. Ваша цифровая безопасность — под контролем.",

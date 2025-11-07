@@ -1,0 +1,28 @@
+.headerBanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #000, #0a0a0a, #000);
+    box-shadow: 0 4px 6px linear-gradient(to right, transparent, #00ffff, transparent);
+    z-index: 10;
+    padding: 20px 0;
+    border-bottom: 2px solid #00ffff;
+    border-image: linear-gradient(to right, transparent, #00ffff, transparent);
+    border-image-slice: 1;
+    margin-top: 60px;
+}
+
+.header__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.header__text {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff;
+    transition: opacity 0.5s ease;
+}
