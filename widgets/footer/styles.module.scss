@@ -48,7 +48,7 @@ $transition-speed: 0.3s;
             box-shadow: 0 5px 40px rgba($glow-color, 0.8),
                 0 0 100px $glow-color;
         }
-    }   
+    }
 }
 
 .logoTitle {
@@ -56,11 +56,13 @@ $transition-speed: 0.3s;
     font-weight: 700;
     color: #ffffff;
     display: block;
+    font-family: var(--font-orbitron);
 }
 
 .logoSubtitle {
     font-size: 14px;
     color: $text-color;
+  font-family: var(--font-orbitron);
 }
 
 .socials {
@@ -134,15 +136,21 @@ $transition-speed: 0.3s;
 
 @media (max-width: 768px) {
     .footer {
-        padding: 40px 0 20px;
+        padding: 10px 20px ;
     }
 
     .logoBlock {
         justify-content: center;
     }
+    .topRow{
+        display: flex;
+        align-items: start;
+        gap:5px;
+    }
 
     .socials {
-        order: 3; // Соцсети внизу
+        order: 3; 
+        align-items: center;
     }
 
     .policyLinks {

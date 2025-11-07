@@ -18,8 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={orbitron.variable}>
         <LanguageProvider>
-          <Background />
-          {children}
+            <Background />
+            {children}
         </LanguageProvider>
       </body>
     </html>
