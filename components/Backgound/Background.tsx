@@ -62,7 +62,7 @@ const Background: React.FC = () => {
     };
 
     const drawGrid = () => {
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.03)";
+      ctx.strokeStyle = "rgba(38, 28, 100, 0.03)";
       ctx.lineWidth = 1;
 
       const step = 80;
@@ -79,7 +79,7 @@ const Background: React.FC = () => {
       for (let y = 0; y < height; y += step) {
         ctx.beginPath();
         ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
+        ctx.lineTo(width, y)
         ctx.stroke();
       }
     };

@@ -92,7 +92,22 @@ type TranslationKey = {
     card4Title: string;
     card4Desc: string;
   };
-  header_texts: string[]
+  header_texts: string[],
+  // Добавленная секция Security
+  security: {
+    title: string,
+    subtitle: string,
+    card1Title: string,
+    card1Desc: string,
+    card2Title: string,
+    card2Desc: string,
+    card3Title: string,
+    card3Desc: string,
+    card4Title: string,
+    card4Desc: string,
+    footer: string,
+    btn:string
+  }
 };
 
 export const translations = {
@@ -193,6 +208,20 @@ export const translations = {
       "dataMining": "Data Mining",
       "machineLearning": "Machine Learning",
       "cyberIntelligence": "Cyber Intelligence",
+    },
+    "security": {
+      "title": "Security. Reliability. Independence.",
+      "subtitle": "Your privacy and data protection are the foundation of 1TRACE. We have created a system where every operation, every request, and every byte of information is protected by multi-level security technologies.",
+      "card1Title": "Distributed Infrastructure",
+      "card1Desc": "The 1TRACE server architecture is built on the principle of decentralization—data is distributed among many nodes in various jurisdictions, which eliminates the possibility of blocking the entire service or data loss. Even if one node fails, the system remains fully operational.",
+      "card2Title": "Independent Infrastructure",
+      "card2Desc": "All service nodes are located in jurisdictions with a high level of digital protection and are not subject to external interference. The infrastructure operates based on blockchain data replication, which makes centralized deletion or modification of information impossible.",
+      "card3Title": "Abuse Resistance and Access Control",
+      "card3Desc": "The system is designed to be maximally resistant to abuse and attacks. Multi-level protection is used against bots, DDoS attacks, SQL injection, as well as automatic data integrity checks. All requests are logged and checked by neural network filters to prevent suspicious activity.",
+      "card4Title": "Secure Communication Channels",
+      "card4Desc": "All data transmission between the user and the system occurs via TLS 1.3 and AES-256 encryption protocols. End-to-End encryption is used for critical operations, similar to the standards of banking systems and messengers with increased confidentiality.",
+      "footer": "We protect data not only with encryption — we protect trust. 1TRACE — where security becomes an art.",
+      "btn":"Learn More About Security Technologies"
     }
   } as TranslationKey,
 
@@ -293,7 +322,20 @@ export const translations = {
       "machineLearning": "Машинное обучение",
       "cyberIntelligence": "Киберразведка",
     },
-
+    "security": {
+      "title": "Безопасность. Надёжность. Независимость.",
+      "subtitle": "Ваша конфиденциальность и защита данных — фундамент 1TRACE. Мы создали систему, где каждая операция, каждый запрос и каждый байт информации защищён многоуровневыми технологиями безопасности.",
+      "card1Title": "Распределённая инфраструктура",
+      "card1Desc": "Серверная архитектура 1TRACE построена по принципу децентрализации — данные распределены между множеством узлов в различных юрисдикциях, что исключает возможность блокировки всего сервиса или потери информации. Даже при выходе из строя одного узла система остается полностью работоспособной.",
+      "card2Title": "Независимая инфраструктура",
+      "card2Desc": "Все узлы сервиса размещены в юрисдикциях с высоким уровнем цифровой защиты и не подвержены внешнему вмешательству. Инфраструктура работает на основе блокчейн-репликации данных, что делает невозможным централизованное удаление или модификацию информации.",
+      "card3Title": "Абузоустойчивость и контроль доступа",
+      "card3Desc": "Система построена так, чтобы быть максимально устойчивой к злоупотреблениям и атакам. Используется многоуровневая защита от ботов, DDoS-атак, SQL-инъекций, а также автоматическая проверка целостности данных. Все запросы логируются и проверяются нейросетевыми фильтрами для предотвращения подозрительной активности.",
+      "card4Title": "Защищённые каналы связи",
+      "card4Desc": "Вся передача данных между пользователем и системой происходит по протоколам TLS 1.3 и AES-256-шифрованию. Для критических операций используется End-to-End шифрование, аналогичное стандартам банковских систем и мессенджеров повышенной конфиденциальности.",
+      "footer": "Мы защищаем данные не только шифрами — мы защищаем доверие. 1TRACE — там, где безопасность становится искусством.",
+      "btn":"                        Подробнее о технологиях безопасности"
+    }
   } as TranslationKey,
 };
 
